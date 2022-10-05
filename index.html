@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weekly Wages</title>
+
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script defer src="main.js"></script>
+  </head>
+
+  <body>
+    <h1>Employee Payroll - Weekly Wage</h1>
+    <hr />
+
+    <p>
+      Enter the number of hours worked and the hourly rate of pay for each
+      employee.
+    </p>
+    <p>
+      Then click the 'Determine Wages' button to calculate the weekly wage for
+      each employee. Time and a half for work over 40 hours.
+    </p>
+
+    <hr />
+
+    <h3>
+      DARCY MADDOX - Weekly Pay: $<span class="wage" id="dm-wage">-----</span>
+    </h3>
+    <p>
+      Hours worked: <input type="number" id="dm-hours" /><br />
+      Hourly Rate: $<input type="number" id="dm-payrate" /><br />
+    </p>
+    <p></p>
+
+    <h3>
+      SOFIE ORENSTEIN - Weekly Pay: $<span class="wage" id="so-wage"
+        >-----</span
+      >
+    </h3>
+    <p>
+      Hours worked: <input type="number" id="so-hours" /><br />
+      Hourly Rate: $<input type="number" id="so-payrate" /><br />
+    </p>
+
+    <h3>
+      KARL YOON - Weekly Pay: $<span class="wage" id="ky-wage">-----</span>
+    </h3>
+    <p>
+      Hours worked: <input type="number" id="ky-hours" /><br />
+      Hourly Rate: $<input type="number" id="ky-payrate" /><br />
+    </p>
+
+    <hr />
+
+    <p>
+      <button id="btn">Determine Wages</button>
+    </p>
+  </body>
+</html>
