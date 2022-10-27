@@ -12,31 +12,25 @@ function btnClicked() {
   let kyHours = +document.getElementById('ky-hours').value;
   let kyPayrate = +document.getElementById('ky-payrate').value;
 
-  // Calculate & Output Pay
-  // Darcy Maddox
-  let dmOvertime = 0;
-  if (dmHours > 40) {
-    dmOvertime = dmHours - 40;
-    dmHours = 40;
-  }
-  let dmPay = dmHours * dmPayrate + dmOvertime * 1.5 * dmPayrate;
-  document.getElementById('dm-wage').innerHTML = dmPay.toFixed(2);
+  // Process
+  let dmWage = calcWage(dmHours, dmPayrate);
+  let soWage = calcWage(soHours, soPayrate);
+  let kyWage = calcWage(kyHours, kyPayrate);
 
-  // Sofie Orenstein
-  let soOvertime = 0;
-  if (soHours > 40) {
-    soOvertime = soHours - 40;
-    soHours = 40;
-  }
-  let soPay = soHours * soPayrate + soOvertime * 1.5 * soPayrate;
-  document.getElementById('so-wage').innerHTML = soPay.toFixed(2);
+  // Output Pay
+  document.getElementById('dm-wage').innerHTML = dmWage;
+  document.getElementById('so-wage').innerHTML = soWage;
+  document.getElementById('ky-wage').innerHTML = kyWage;
 
-  // Karl Yoon
-  let kyOvertime = 0;
-  if (kyHours > 40) {
-    kyOvertime = kyHours - 40;
-    kyHours = 40;
-  }
-  let kyPay = kyHours * kyPayrate + kyOvertime * 1.5 * kyPayrate;
-  document.getElementById('ky-wage').innerHTML = kyPay.toFixed(2);
 }
+
+function calcWage (hours, payrate){
+  let overtime = 0;
+  if (hours > 40) {
+    overtime = hours - 40;
+    hours = 40;
+  }
+  let pay = hours * payrate + overtime * 1.5 * payrate;
+  return pay.toFixed(2);
+}
+
